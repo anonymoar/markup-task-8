@@ -727,16 +727,29 @@ ul
     }
 }
 
-.wheel:not(.wheel-2)
+.wheel
 {
-    animation: 2s linear infinite wheel-animation;
+    animation: 1.5s infinite linear forwards wheel-animation;
 }
 
 @keyframes wheel-animation
 {
     to
     {
-        transform: rotate(-360deg);
+        transform: rotate(-1turn);
+    }
+}
+
+.wheel-joint
+{
+    animation: 1.5s infinite linear forwards wheel-joint-animation;
+}
+
+@keyframes wheel-joint-animation
+{
+    to
+    {
+        transform: rotate(1turn);
     }
 }
 
