@@ -876,9 +876,7 @@ ul
 }
 
 .engine-body,
-.compartment,
-.compartment-two,
-.compartment-three
+.compartment
 {
     animation: 1s linear 2s forwards train-speed-animation;
 }
