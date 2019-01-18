@@ -846,14 +846,24 @@ ul
     animation: 5s linear 2s infinite forwards bridge-light;
 }
 
+/*
+  Свойства с префиксом нужны для того чтобы включить реализацию в браузерах,
+  которые по тем или иным причинам пока не поддержали нормально фичу.
+
+  Программисты вручную этим обычно не занимаются, обычно используют эту штуку:
+    autoprefixer - https://github.com/postcss/autoprefixer
+
+  Свойство box-shadow сейчас поддерживается во всех браузерах,
+  поэтому префикс писать не нужно.
+  Проверить поддержку можно тут: https://caniuse.com/#search=box-shadow
+*/
+
 @keyframes bridge-light
 {
     0%,
     15%,
     25%
     {
-        -moz-box-shadow: 0 0 10px #fff;
-        -webkit-box-shadow: 0 0 10px #fff;
         box-shadow: 0 0 10px #fff;
     }
 
@@ -861,8 +871,6 @@ ul
     20%,
     30%
     {
-        -moz-box-shadow: 0 0 20px #ff6;
-        -webkit-box-shadow: 0 0 20px #ff6;
         box-shadow: 0 0 20px #ff6;
     }
 }
