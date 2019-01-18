@@ -676,15 +676,27 @@ ul
     height: 120px;
 }
 
+/*
+  Приоритетнее использовать сокращённое свойство animation, его синтаксис:
+
+  animation: duration | timing-function | delay |
+             iteration-count | direction | fill-mode |
+             play-state | name
+
+  Можно опускать всё кроме duration и name, но порядок желательно соблюдать:
+
+    animation: 8s moon-animation;
+
+  PascalCase, camelCase или snake_case очень редко используют в HTML/CSS,
+  поэтому и название анимаций лучше писать в kebab-case.
+*/
+
 .moon
 {
-    animation-name: moonAnimation;
-    animation-duration: 8s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation: 8s linear forwards moon-animation;
 }
 
-@keyframes moonAnimation
+@keyframes moon-animation
 {
     from
     {
@@ -699,13 +711,10 @@ ul
 
 .train
 {
-    animation-name: trainAnimation;
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: 7s linear infinite train-animation;
 }
 
-@keyframes trainAnimation
+@keyframes train-animation
 {
     from
     {
@@ -720,13 +729,10 @@ ul
 
 .wheel:not(.wheel-2)
 {
-    animation-name: wheelAnimation;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: 2s linear infinite wheel-animation;
 }
 
-@keyframes wheelAnimation
+@keyframes wheel-animation
 {
     to
     {
@@ -736,14 +742,10 @@ ul
 
 .smoke
 {
-    animation-name: smokeAnimation;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation: 4s linear infinite forwards smoke-animation;
 }
 
-@keyframes smokeAnimation
+@keyframes smoke-animation
 {
     to
     {
@@ -769,25 +771,25 @@ ul
 
 .cloud:nth-child(1)
 {
-    animation: cloud-1Animation 9s linear infinite forwards;
+    animation: 9s linear infinite forwards cloud-1-animation;
 }
 
 .cloud:nth-child(2)
 {
-    animation: cloud-2Animation 10s linear infinite forwards;
+    animation: 10s linear infinite forwards cloud-2-animation;
 }
 
 .cloud:nth-child(3)
 {
-    animation: cloud-3Animation 14s linear infinite forwards;
+    animation: 14s linear infinite forwards cloud-3-animation;
 }
 
 .cloud:nth-child(4)
 {
-    animation: cloud-4Animation 18s linear infinite forwards;
+    animation: 18s linear infinite forwards cloud-4-animation;
 }
 
-@keyframes cloud-1Animation
+@keyframes cloud-1-animation
 {
     from
     {
@@ -800,7 +802,7 @@ ul
     }
 }
 
-@keyframes cloud-2Animation
+@keyframes cloud-2-animation
 {
     from
     {
@@ -813,7 +815,7 @@ ul
     }
 }
 
-@keyframes cloud-3Animation
+@keyframes cloud-3-animation
 {
     from
     {
@@ -826,7 +828,7 @@ ul
     }
 }
 
-@keyframes cloud-4Animation
+@keyframes cloud-4-animation
 {
     from
     {
@@ -841,10 +843,10 @@ ul
 
 .bridge
 {
-    animation: bridgeLight 5s linear 2s infinite forwards;
+    animation: 5s linear 2s infinite forwards bridge-light;
 }
 
-@keyframes bridgeLight
+@keyframes bridge-light
 {
     0%,
     15%,
@@ -870,10 +872,10 @@ ul
 .compartment-two,
 .compartment-three
 {
-    animation: trainSpeedAnimation 1s linear 2s forwards;
+    animation: 1s linear 2s forwards train-speed-animation;
 }
 
-@keyframes trainSpeedAnimation
+@keyframes train-speed-animation
 {
     to
     {
